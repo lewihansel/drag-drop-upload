@@ -1,6 +1,6 @@
 # [Luma] Take Home Challenge
 
-![landing page screenshot](public\images\ScrnShotLanding.png)
+![landing page screenshot](https://raw.githubusercontent.com/lewihansel/luma_challenge/main/public/images/ScrnShotLanding.png)
 
 ## Features:
 
