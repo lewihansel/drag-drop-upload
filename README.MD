@@ -2,8 +2,6 @@
 
 ![landing page screenshot](https://raw.githubusercontent.com/lewihansel/luma_challenge/main/public/images/ScrnShotLanding.png)
 
-[![Run on Repl.it](https://repl.it/badge/github/lewihansel/luma_challenge)](https://repl.it/github/lewihansel/luma_challenge)
-
 ## Features:
 
 - Drag and Drop Upload ✔️
@@ -14,6 +12,15 @@
   - Express (routing)
   - Multer (multipart/form-data file upload)
   - Loki (No-SQL, local database)
+
+### To be Implemented :
+
+- Multiple file upload (front-end is ready) ❌
+- Rename prompt (if duplicate found) ❌
+- Prograss Bar (to compensate big file upload) ❌
+- Delete File from database ❌
+
+<br />
 
 <br />
 
@@ -33,6 +40,13 @@ Before running this project please install required dependencies by running this
 
 ### `npm run dev`
 
-Run the app in the development mode with nodemon. I recomended you run the app via this script so you can easy make change and the server will restart automaticly. 
+Run the app in the development mode with nodemon. I recomended you run the app via this script so you can easy make change and the server will restart automaticly.
 
-All http request will be visible in the console if you run this in development mode. 
+All http request will be visible in the console if you run this in development mode.
+
+<br />
+<br />
+
+### Don't want to download? Try in on Repl instead
+
+[![Run on Repl.it](https://repl.it/badge/github/lewihansel/luma_challenge)](https://repl.it/github/lewihansel/luma_challenge)
