@@ -2,6 +2,8 @@
 
 ![landing page screenshot](https://raw.githubusercontent.com/lewihansel/luma_challenge/main/public/images/ScrnShotLanding.png)
 
+[![Run on Repl.it](https://repl.it/badge/github/lewihansel/luma_challenge)](https://repl.it/github/lewihansel/luma_challenge)
+
 ## Features:
 
 - Drag and Drop Upload ✔️
