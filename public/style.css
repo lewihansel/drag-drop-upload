@@ -152,26 +152,17 @@ button:hover {
   border-color: var(--col-main2);
 }
 .my-form {
-  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .instruction {
   margin-top: 0;
-  width: 80%;
+  width: 75%;
   font-size: 15px;
   text-align: center;
+  margin-bottom: 0;
 }
-/* #gallery {
-  margin-top: 10px;
-}
-#gallery img {
-  width: 150px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  vertical-align: middle;
-} */
 .uplBtn {
   display: inline-block;
   padding: 15px;
@@ -180,6 +171,7 @@ button:hover {
   cursor: pointer;
   border-radius: var(--border-rad);
   border: none;
+  margin-bottom: 5px;
 }
 .uplBtn:hover {
   filter: brightness(1.1);
