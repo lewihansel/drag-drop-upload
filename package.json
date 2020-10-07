@@ -1,11 +1,11 @@
 {
   "name": "luma-take-home-challenge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "take home test for sofware engineer postion at Luma Digital",
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server"
+    "dev": "cross-env NODE_ENV=development nodemon server"
   },
   "author": "Lewi Hansel",
   "license": "MIT",
@@ -16,6 +16,8 @@
     "multer": "^1.4.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.4"
   }
 }

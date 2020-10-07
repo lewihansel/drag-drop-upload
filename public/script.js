@@ -26,12 +26,11 @@ function unhighlight(e) {
   dropArea.classList.remove("highlight");
 }
 
-// handle file dropping
+// handle file dropping (grabbing files)
 dropArea.addEventListener("drop", handleDrop, false);
 function handleDrop(e) {
   let data = e.dataTransfer;
   let files = data.files;
-
   handleFiles(files);
 }
 
@@ -53,8 +52,10 @@ async function uploadFile(file) {
 
   if (fileNameList.has(file.name)) {
     // checking if the file already in the database
-    alert("File is already uploaded to our database");
-    console.log("pass");
+    alert(
+      `File name : ${file.name} is already uploaded to our database, please rename your file to another name before re uploading`
+    );
+    document.querySelector(".popup-trigger").click();
   } else {
     // creating new formData object
     let formData = new FormData();
@@ -67,6 +68,7 @@ async function uploadFile(file) {
     })
       .then(() => {
         alert("Upload Success!");
+        document.querySelector(".popup-trigger").click();
       })
       .catch((err) => {
         console.error(err);

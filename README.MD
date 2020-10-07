@@ -6,7 +6,7 @@
 
 - Drag and Drop Upload ✔️
 - Vanilla JS Front-End ✔️
-- Duplicate file Handling ✔️
+- Duplicate file handling ✔️
 - List of uplodad files ✔️
 - Backend Dependencies:
   - Express (routing)
@@ -31,4 +31,6 @@ Before running this project please install required dependencies by running this
 
 ### `npm run dev`
 
-Run the app in the development mode with nodemon.
+Run the app in the development mode with nodemon. I recomended you run the app via this script so you can easy make change and the server will restart automaticly. 
+
+All http request will be visible in the console if you run this in development mode. 

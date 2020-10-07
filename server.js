@@ -1,6 +1,7 @@
 const express = require("express");
 const multer = require("multer");
 const bodyParser = require("body-parser");
+const morgan = require("morgan");
 const fs = require("fs");
 const path = require("path");
 const Loki = require("lokijs");
@@ -11,12 +12,19 @@ const app = express();
 // MIDDLEWARE
 app.use("/", express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
 
 // LOKI DATABASE SETUP
 const DB_NAME = "db.json";
 const COLLECTION_NAME = "files";
 const UPLOAD_PATH = "uploads";
 const db = new Loki(`${UPLOAD_PATH}/${DB_NAME}`, { persistenceMethod: "fs" });
+if (!fs.existsSync(UPLOAD_PATH)) {
+  // creading /uploads dir
+  fs.mkdirSync(UPLOAD_PATH);
+}
 
 // FIND or ADD Collection to database
 const loadCollection = function (colName, db) {
@@ -39,17 +47,6 @@ const storage = multer.diskStorage({
   },
 });
 const upload = multer({ storage: storage });
-
-// // Duplicate file filter
-// const dupFilter = function (req, file, cb) {
-  
-  
-
-//   if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
-//       return cb(new Error('Only image files are allowed!'), false);
-//   }
-//   cb(null, true);
-// };
 
 // ROUTES
 // @desc Get index.html (landing)
