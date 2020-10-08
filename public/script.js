@@ -131,16 +131,25 @@ modalTriggers.forEach((trigger) => {
     popupModal
       .querySelector(".popup-modal__close")
       .addEventListener("click", () => {
-        popupModal.classList.remove("is--visible");
-        bodyBlackout.classList.remove("is-blacked-out");
-        document.getElementById("uploadList").innerHTML = "";
+        closeModal();
       });
 
     // adding event listener, out-of-bound click to close modal
     bodyBlackout.addEventListener("click", () => {
+      closeModal();
+    });
+
+    // adding event listener to close modal with esacape key
+    document.addEventListener("keydown", (e) => {
+      if (e.code === "Escape") {
+        closeModal();
+      }
+    });
+
+    function closeModal() {
       popupModal.classList.remove("is--visible");
       bodyBlackout.classList.remove("is-blacked-out");
       document.getElementById("uploadList").innerHTML = "";
-    });
+    }
   });
 });
