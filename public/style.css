@@ -244,6 +244,8 @@ button:hover {
   max-height: 300px;
   overflow: auto;
 }
+
+/* modal list items */
 .file {
   margin: 0.5rem;
   align-items: center;
@@ -252,5 +254,6 @@ button:hover {
   font-size: 21px;
 }
 .file .date {
+  margin-top: 0.2rem;
   font-size: 16px;
 }

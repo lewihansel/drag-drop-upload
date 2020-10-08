@@ -6,17 +6,17 @@ const fs = require("fs");
 const path = require("path");
 const Loki = require("lokijs");
 
-// EXPRESS APP
+// Initalizaing
 const app = express();
 
-// MIDDLEWARE
+// Express Middleware
 app.use("/", express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-// LOKI DATABASE SETUP
+// Loki Database
 const DB_NAME = "db.json";
 const COLLECTION_NAME = "files";
 const UPLOAD_PATH = "uploads";
@@ -67,7 +67,7 @@ app.post("/uploadfile", upload.single("file"), async (req, res) => {
   }
 
   try {
-    // retrieving collection and load the file
+    // retrieving collection and add to collection
     const col = await loadCollection(COLLECTION_NAME, db);
     const data = col.insert(file);
 
@@ -98,7 +98,7 @@ app.get("/uploaded", async (req, res) => {
   }
 });
 
-// @desc Get files by ID
+// @desc Get file by ID
 // @route GET /uploaded/:id
 app.get("/uploaded/:id", async (req, res) => {
   try {

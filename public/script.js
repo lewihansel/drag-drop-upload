@@ -110,10 +110,13 @@ modalTriggers.forEach((trigger) => {
           fileList.map((file) => {
             const fileName = file.originalname;
             const createdAt = new Date(file.meta.created);
+            const size = file.size / 1000000;
             document.getElementById("uploadList").innerHTML += `
             <div class="file">
               <a href="/uploaded/${file.$loki}" class="title">${fileName}</a>
-              <div class="date">Uploaded at : ${createdAt.toUTCString()}</div>
+              <div class="date"><strong>Uploaded at:</strong> ${createdAt.toUTCString()}, <strong>size:</strong> ${size.toFixed(
+              3
+            )}mb</div>
             </div>
           `;
           });
